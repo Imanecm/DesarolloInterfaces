@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Movie Streaming</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #141414;
+            color: white;
+        }
+        .title {
+              background-color: red;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+}
+        .navbar {
+            background-color: black;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .movies-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .card {
+            width: 250px;
+            background-color: #222;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+        .info {
+            padding: 15px;
+        }
+        .movie-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .description {
+            font-size: 14px;
+            color: #bbb;
+            margin-bottom: 10px;
+        }
+        .button {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: red;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size : 14px;
+            transition : background 0.3s;
+        }
+        .button:hover {
+            background-color: darkred;
+        }
+        .footer {
+             background-color: black;
+             color: #bbb;
+             text-align: center;
+             padding: 20px;
+             margin-top: 40px;
+             font-size: 14px;}
+        .footer a {
+             color: red;
+             text-decoration: none;
+             margin: 0 10px;}
+        .footer a:hover {
+             color: darkred;}
+
+    </style>
+</head>
+<body>
+
+    <div class="title">Bienvenido a tu página de streaming favorita </div>
+    
+    <div class="navbar">Streaming de películas</div>
+    <div class="movies-container">
+        <div class="card">
+            <img class="image" src="Inception.jpg" alt="Movie 1">
+            <div class="info">
+                <div class="movie-title">Inception</div>
+                <a class="button" href="inception.htm" target="_blank">Ver más</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="image" src="Avengers Endgame.jpg" alt="Movie 2">
+            <div class="info">
+                <div class="movie-title">Avengers: Endgame</div>
+                
+               <a class="button" href="endgame.html" target="_blank">Ver más</a>
+            </div>
+        </div>
+
+    
+        <div class="card">
+            <img class="image" src="The Dark Knight.jpg" alt="Movie 3">
+            <div class="info">
+                <div class="movie-title">The Dark Knight</div>
+               <a class="button" href="batman.html" target="_blank">Ver más</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="image" src="Interstellar.jpg" alt="Movie 4">
+            <div class="info">
+                <div class="movie-title">Interstellar</div>
+                <a class="button" href="interstellar.html" target="_blank">Ver más</a>
+            </div>
+        </div>
+    </div>
+
+
+
+ <div class="navbar">Streaming de anime</div>
+
+    <div class="movies-container">
+        
+        <div class="card">
+            <img class="image" src="One_Piece.png" alt="Movie 1">
+            <div class="info">
+                <div class="movie-title">One Piece</div>
+                <a class="button" href="onepiece.html" target="_blank">Ver más</a>
+            </div>
+        </div>
+
+        
+        <div class="card">
+            <img class="image" src="Attack_on_Titan_Season_1.png" alt="Movie 2">
+            <div class="movie-info">
+                <div class="movie-title">Attack on Titan</div>
+                <a class="button" href="attack.html" target="_blank">Ver más</a>
+            </div>
+        </div>
+
+       
+        <div class="card">
+            <img class="image" src="steinsgates.jpg" alt="Movie 3">
+            <div class="info">
+                <div class="movie-title"> Steins Gate </div>
+                <a class="button" href="gates.html" target="_blank">Ver más</a>
+            </div>
+        </div>
+
+       
+        <div class="card">
+            <img class="image" src="Solo leveling.jpg" alt="Movie 4">
+            <div class="info">
+                <div class="movie-title"> Solo leveling </div>
+                <a class="button" href="solo.html" target="_blank">Ver más</a>
+            </div>
+        </div>
+    </div>
+
+<footer class="footer">
+    <p>  Mi pagina de Streaming - Todos los derechos reservados </p>
+    <p>
+        <a href="contacto.html">Contacto</a> /
+        <a href="sobre.html">Sobre nosotros</a></p>
+</footer>
+
+</body>
+</html>
