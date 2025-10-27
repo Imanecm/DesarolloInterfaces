@@ -5,51 +5,11 @@
         { "name": "Contacto",     "reference": "123.html" },
         { "name": "Subscribirse", "reference": "123.html" }
     ],
-    "movie_categories": ["Todas", "Acción", "Comedia", "Drama", "Aventuras"],
-    "anime_categories": ["Todas", "Acción", "Comedia", "Drama", "Aventuras"],
     "movies_list" : [
-        { 
-            "image": "inception.jpg",     
-            "title": "Inception",
-            "categories": ["Acción", "Aventuras"]
-        },
-        { 
-            "image": "endgame.jpg",       
-            "title": "Avengers: End Game",
-            "categories": ["Acción", "Aventuras"]
-        },
-        { 
-            "image": "batman.jpg",        
-            "title": "The Dark Knight",
-            "categories": ["Acción", "Drama"]
-        },
-        { 
-            "image": "interestellar.jpg", 
-            "title": "Interstellar",
-            "categories": ["Aventuras", "Drama"]
-        }
-    ],
-    "anime_list" : [
-        { 
-            "image": "naruto.jpg",     
-            "title": "Naruto",
-            "categories": ["Acción", "Aventuras"]
-        },
-        { 
-            "image": "onepiece.jpg",       
-            "title": "One Piece",
-            "categories": ["Acción", "Aventuras", "Comedia"]
-        },
-        { 
-            "image": "attackontitan.jpg",        
-            "title": "Attack on Titan",
-            "categories": ["Acción", "Drama"]
-        },
-        { 
-            "image": "demonslayer.jpg", 
-            "title": "Demon Slayer",
-            "categories": ["Acción", "Aventuras"]
-        }
+        { "image": "inception.jpg",     "title": "Inception"          },
+        { "image": "endgame.jpg",       "title": "Avengers: End Game" },
+        { "image": "batman.jpg",        "title": "The Dark Knight"    },
+        { "image": "interestellar.jpg", "title": "Interstellar"       }
     ],
     "movie_content" : [
         {
@@ -62,7 +22,7 @@
         { 
             "image": "endgame.jpg",
             "title": "Avengers: End Game",
-            "description": "After the devastating events of Infinity War, the remaining Avengers assemble once more to reverse Thanos' actions and restore balance to the universe in one final stand.",
+            "description": "After the devastating events of Infinity War, the remaining Avengers assemble once more to reverse Thanos’ actions and restore balance to the universe in one final stand.",
             "castlist": "Robert Downey Jr. – Tony Stark / Iron Man, Chris Evans – Steve Rogers / Captain America, Mark Ruffalo – Bruce Banner / Hulk, Chris Hemsworth – Thor, Scarlett Johansson – Natasha Romanoff / Black Widow",
             "trailer": "https://www.youtube.com/watch?v=TcMBFSGVi1c"
         },
@@ -76,7 +36,7 @@
         { 
             "image": "interestellar.jpg",
             "title": "Interstellar",
-            "description": "A team of explorers travels through a wormhole in space in an attempt to ensure humanity's survival as Earth becomes uninhabitable.",
+            "description": "A team of explorers travels through a wormhole in space in an attempt to ensure humanity’s survival as Earth becomes uninhabitable.",
             "castlist": "Matthew McConaughey – Cooper, Anne Hathaway – Amelia Brand, Jessica Chastain – Murphy, Michael Caine – Professor Brand, Matt Damon – Mann",
             "trailer": "https://www.youtube.com/watch?v=zSWdZVtXT7E"
         }
