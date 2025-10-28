@@ -2,7 +2,7 @@
     "mainmenu_items": [
         {
             "name": "Inicio",
-            "reference": "boutaina.html"
+            "reference": "index.html"
         },
         {
             "name": "Categorías",
