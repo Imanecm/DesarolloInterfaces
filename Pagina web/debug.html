@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug - Todas las películas</title>
+</head>
+<body>
+    <h1>Debug - Todas las películas del JSON</h1>
+    <div id="debug-container"></div>
+    
+    <script>
+        fetch('data/data.json')
+            .then(response => response.json())
+            .then(data => {
+                const allMovies = data.movies_list || [];
+                const container = document.getElementById('debug-container');
+                
+                allMovies.forEach(movie => {
+                    container.innerHTML += `
+                        <div style="border: 1px solid #ccc; margin: 10px; padding: 10px;">
+                            <strong>${movie.title}</strong><br>
+                            Imagen: ${movie.image}<br>
+                            Categoría: ${movie.category || 'NO DEFINIDA'}<br>
+                            ¿Es anime?: ${movie.category === 'Anime' ? 'SÍ' : 'NO'}
+                        </div>
+                    `;
+                });
+            });
+    </script>
+</body>
+</html>

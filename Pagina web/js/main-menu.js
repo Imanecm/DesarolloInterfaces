@@ -12,9 +12,9 @@ function createMenuSection(section) {
                     <div class="categories-column">
                         <h4>Películas y Anime</h4>
                         <ul>
-                            <li><a href="categoria.html?tipo=peliculas">Películas</a></li>
-                            <li><a href="categoria.html?tipo=anime">Anime</a></li>
-                            <li><a href="categoria.html?tipo=series">Series</a></li>
+                            <li><a href="peliculas.html">Todas las Películas</a></li>
+                            <li><a href="anime.html">Todo el Anime</a></li>
+                            <li><a href="series.html">Todas las Series</a></li>
                         </ul>
                     </div>
                     <div class="categories-column">
