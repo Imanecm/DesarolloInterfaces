@@ -36,13 +36,43 @@
             "title": "Interstellar"
         }
     ],
-    "cateogries": [
-        "drama",
-        "comedia",
-        "accion",
-        "aventura",
-        "cienciaficcion",
-        "terror"
+    "cateogrias": [
+        {
+            "id": 1,
+            "nombre": "Peliculas",
+            "subcategorias": [
+                { "id": 101, "nombre": "Drama" },
+                { "id": 102, "nombre": "Comedia" },
+                { "id": 103, "nombre": "Accion" },
+                { "id": 104, "nombre": "Aventura" },
+                { "id": 105, "nombre": "Ciencia Ficción" },
+                { "id": 106, "nombre": "Terror" }
+            ]
+        },
+        {
+            "id": 2,
+            "nombre": "Series",
+            "subcategorias": [
+                { "id": 201, "nombre": "Drama" },
+                { "id": 202, "nombre": "Comedia" },
+                { "id": 203, "nombre": "Accion" },
+                { "id": 204, "nombre": "Aventura" },
+                { "id": 205, "nombre": "Ciencia Ficción" },
+                { "id": 206, "nombre": "Terror" }
+            ]
+        },
+        {
+            "id": 3,
+            "nombre": "Anime",
+            "subcategorias": [
+                { "id": 301, "nombre": "Drama" },
+                { "id": 302, "nombre": "Comedia" },
+                { "id": 303, "nombre": "Accion" },
+                { "id": 304, "nombre": "Aventura" },
+                { "id": 305, "nombre": "Ciencia Ficción" },
+                { "id": 306, "nombre": "Terror" }
+            ]
+        }
     ],
     "movie_content": [
         {
