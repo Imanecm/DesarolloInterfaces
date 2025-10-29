@@ -36,6 +36,14 @@
             "title": "Interstellar"
         }
     ],
+    "cateogries": [
+        "drama",
+        "comedia",
+        "accion",
+        "aventura",
+        "cienciaficcion",
+        "terror"
+    ],
     "movie_content": [
         {
             "image": "inception.jpg",
