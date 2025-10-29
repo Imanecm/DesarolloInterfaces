@@ -3,57 +3,59 @@
     display: flex;
     text-align: left;
     justify-content: space-between;
-    background-color: black;
+    background-color: #141414;
 }
 
 #menu-main-list {
-    background-color: black;
-    margin: 0; /* Elimina márgenes automáticos */
+    background-color: #141414;
+    margin: 0;
     padding: 10px 0;
-    text-align: left; /* Alinea el menú a la izquierda */
-    border-radius: 10px; /* Bordes redondeados en el contenedor */
+    text-align: left;
+    border-radius: 0;
 }
 
 #menu-main-list li {
     display: inline-block;
     cursor: pointer;
-    font-size: 1.5em;
+    font-size: 1.4em;
     color: white;
-    padding: 15px 25px; /* Ajusta el espacio alrededor del texto */
-    margin: 0 10px; /* Espaciado entre elementos */
-    transition: background 0.3s ease, color 0.3s ease; /* Transición suave para los efectos */
+    padding: 15px 25px;
+    margin: 0 5px;
+    transition: color 0.3s ease;
     position: relative;
 }
 
 #menu-main-list li a {
     text-decoration: none;
-    color: white;
-    transition: color 0.3s ease; /* Transición suave para el texto */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Sombra en el texto */
+    color: #e5e5e5;
+    transition: color 0.3s ease;
+    font-weight: 500;
 }
 
 #menu-main-list li:hover {
-    background: rgba(255, 0, 0, 0.7); /* Fondo rojo con mayor opacidad al hacer hover */
-    border-radius: 5px; /* Bordes redondeados al hacer hover */
+    background: transparent;
+    border-radius: 0;
 }
 
 #menu-main-list li:hover a {
-    color: #fffacd; /* Cambiar el color del texto al pasar el ratón (crema claro) */
+    color: #ffffff;
 }
 
 .menu-links.active {
     font-weight: bold;
-    color: #ff0; /* o el color que prefieras */
+    color: #ffffff;
 }
 
-/* Estilos para el dropdown de categorías */
+/* DISEÑO DROPDOWN - ESTILO NETFLIX */
 .dropdown {
     position: relative;
 }
 
 .dropdown-toggle::after {
     content: " ▼";
-    font-size: 0.8em;
+    font-size: 0.6em;
+    margin-left: 5px;
+    color: #e5e5e5;
 }
 
 .dropdown-menu {
@@ -61,20 +63,23 @@
     position: absolute;
     top: 100%;
     left: 0;
-    background: white;
-    min-width: 500px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    min-width: 700px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
     z-index: 1000;
     padding: 0;
-    margin-top: 5px;
-    border: 2px solid #ff0000;
+    margin-top: 0;
+    border: 1px solid #2a2a2a;
+    overflow: hidden;
 }
 
 .dropdown-content {
     display: flex;
-    padding: 20px;
-    gap: 30px;
+    padding: 30px;
+    gap: 60px;
+    background: rgba(20, 20, 20, 0.95);
 }
 
 .categories-column {
@@ -82,12 +87,14 @@
 }
 
 .categories-column h4 {
-    margin: 0 0 15px 0;
-    color: #333;
-    font-size: 18px;
-    font-weight: bold;
-    border-bottom: 2px solid #ff0000;
-    padding-bottom: 5px;
+    margin: 0 0 20px 0;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e50914;
 }
 
 .categories-column ul {
@@ -97,56 +104,86 @@
 }
 
 .categories-column li {
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 
 .categories-column a {
-    color: #555;
+    color: #b3b3b3;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 14px;
     transition: all 0.3s ease;
     display: block;
-    padding: 8px 0;
-    border-radius: 3px;
+    padding: 6px 0;
+    border-radius: 2px;
+    font-weight: 400;
 }
 
 .categories-column a:hover {
-    color: #ff0000;
-    background-color: #f8f8f8;
-    transform: translateX(5px);
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
     padding-left: 10px;
+    transform: translateX(5px);
 }
 
 /* Comportamiento del dropdown */
 .dropdown:hover .dropdown-menu {
     display: block;
+    animation: netflixFadeIn 0.2s ease;
+}
+
+@keyframes netflixFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Efecto hover específico para el dropdown */
 .dropdown:hover {
-    background: rgba(255, 0, 0, 0.7);
-    border-radius: 5px;
+    background: transparent;
 }
 
 .dropdown:hover .dropdown-toggle {
-    color: #fffacd;
+    color: #ffffff;
+}
+
+/* Línea roja inferior al hacer hover (estilo Netflix) */
+.dropdown:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 25px;
+    right: 25px;
+    height: 3px;
+    background: #e50914;
+    border-radius: 2px;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
     .dropdown-menu {
-        min-width: 300px;
+        min-width: 320px;
         left: -50px;
     }
     
     .dropdown-content {
         flex-direction: column;
-        gap: 20px;
+        gap: 25px;
+        padding: 20px;
     }
     
     #menu-main-list li {
-        font-size: 1.2em;
-        padding: 10px 15px;
-        margin: 0 5px;
+        font-size: 1.1em;
+        padding: 12px 15px;
+        margin: 0 3px;
+    }
+    
+    .dropdown:hover::after {
+        left: 15px;
+        right: 15px;
     }
 }
