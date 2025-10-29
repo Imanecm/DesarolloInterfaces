@@ -6,7 +6,8 @@
         },
         {
             "name": "Categorías",
-            "reference": "123.html"
+            "reference": "#",
+            "hasDropdown": true
         },
         {
             "name": "Contacto",
