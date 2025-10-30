@@ -1,61 +1,73 @@
-/* Menú (Barra Horizontal) */
+/* Menú (Barra Horizontal) - Estilo Netflix Premium */
 #menu-main {
     display: flex;
     text-align: left;
     justify-content: space-between;
-    background-color: #141414;
+    background: linear-gradient(180deg, #141414 0%, #0a0a0a 100%);
+    padding: 0 4%;
+    position: relative;
+    z-index: 1000;
+    border-bottom: 1px solid #2a2a2a;
 }
 
 #menu-main-list {
-    background-color: #141414;
+    background: transparent;
     margin: 0;
-    padding: 10px 0;
+    padding: 0;
     text-align: left;
-    border-radius: 0;
+    display: flex;
+    align-items: center;
+    height: 70px;
 }
 
 #menu-main-list li {
     display: inline-block;
     cursor: pointer;
-    font-size: 1.4em;
+    font-size: 0.95em;
     color: white;
-    padding: 15px 25px;
-    margin: 0 5px;
-    transition: color 0.3s ease;
+    padding: 0 25px;
+    margin: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
+    font-weight: 500;
+    height: 70px;
+    display: flex;
+    align-items: center;
 }
 
 #menu-main-list li a {
     text-decoration: none;
     color: #e5e5e5;
-    transition: color 0.3s ease;
-    font-weight: 500;
+    transition: all 0.3s ease;
+    font-weight: 400;
+    letter-spacing: 0.3px;
 }
 
 #menu-main-list li:hover {
     background: transparent;
-    border-radius: 0;
 }
 
 #menu-main-list li:hover a {
     color: #ffffff;
+    text-shadow: 0 0 10px rgba(255,255,255,0.3);
 }
 
 .menu-links.active {
-    font-weight: bold;
+    font-weight: 600;
     color: #ffffff;
 }
 
-/* DISEÑO DROPDOWN - ESTILO NETFLIX */
+/* DISEÑO DROPDOWN - NETFLIX PREMIUM */
 .dropdown {
     position: relative;
 }
 
 .dropdown-toggle::after {
     content: " ▼";
-    font-size: 0.6em;
-    margin-left: 5px;
+    font-size: 0.5em;
+    margin-left: 6px;
     color: #e5e5e5;
+    vertical-align: middle;
 }
 
 .dropdown-menu {
@@ -63,38 +75,86 @@
     position: absolute;
     top: 100%;
     left: 0;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(20, 20, 20, 0.98);
     backdrop-filter: blur(10px);
-    min-width: 700px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-    border-radius: 4px;
+    min-width: 800px;
+    border-radius: 0 0 8px 8px;
     z-index: 1000;
     padding: 0;
     margin-top: 0;
-    border: 1px solid #2a2a2a;
+    border: 1px solid #333;
+    border-top: 2px solid #e50914;
     overflow: hidden;
+    animation: netflixSlideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes netflixSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 .dropdown-content {
+    padding: 0;
     display: flex;
-    padding: 30px;
-    gap: 60px;
-    background: rgba(20, 20, 20, 0.95);
+    background: linear-gradient(135deg, rgba(10,10,10,0.95) 0%, rgba(30,30,30,0.95) 100%);
 }
 
+/* Columnas Netflix */
 .categories-column {
     flex: 1;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.categories-column:last-child {
+    border-right: none;
+}
+
+.categories-column::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(229, 9, 20, 0.03), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.categories-column:hover::before {
+    opacity: 1;
 }
 
 .categories-column h4 {
-    margin: 0 0 20px 0;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 600;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid #e50914;
+    letter-spacing: 2px;
+    padding: 25px 30px 15px 30px;
+    margin: 0;
+    background: linear-gradient(90deg, #e50914 0%, #b81d24 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.categories-column h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+    width: 40px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 1px;
 }
 
 .categories-column ul {
@@ -104,42 +164,72 @@
 }
 
 .categories-column li {
-    margin-bottom: 12px;
+    margin: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.categories-column li:last-child {
+    border-bottom: none;
+}
+
+.categories-column li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: linear-gradient(to bottom, #e50914, #ff1a1a);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+    transform-origin: bottom;
+}
+
+.categories-column li:hover::before {
+    transform: scaleY(1);
 }
 
 .categories-column a {
+    display: block;
     color: #b3b3b3;
     text-decoration: none;
     font-size: 14px;
-    transition: all 0.3s ease;
-    display: block;
-    padding: 6px 0;
-    border-radius: 2px;
-    font-weight: 400;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 18px 30px;
+    background: transparent;
+    position: relative;
+    letter-spacing: 0.5px;
 }
 
 .categories-column a:hover {
     color: #ffffff;
-    background: rgba(255, 255, 255, 0.1);
-    padding-left: 10px;
-    transform: translateX(5px);
+    background: linear-gradient(90deg, rgba(229, 9, 20, 0.1) 0%, transparent 100%);
+    padding-left: 35px;
+    text-shadow: 0 0 8px rgba(255,255,255,0.5);
+}
+
+.categories-column a::after {
+    content: '▶';
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 10px;
+    color: #e50914;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.categories-column a:hover::after {
+    opacity: 1;
+    right: 20px;
 }
 
 /* Comportamiento del dropdown */
 .dropdown:hover .dropdown-menu {
     display: block;
-    animation: netflixFadeIn 0.2s ease;
-}
-
-@keyframes netflixFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-5px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 /* Efecto hover específico para el dropdown */
@@ -151,39 +241,91 @@
     color: #ffffff;
 }
 
-/* Línea roja inferior al hacer hover (estilo Netflix) */
-.dropdown:hover::after {
+/* Línea roja inferior al hacer hover - Estilo Netflix */
+.dropdown:hover::before {
     content: '';
     position: absolute;
     bottom: 0;
     left: 25px;
     right: 25px;
     height: 3px;
-    background: #e50914;
-    border-radius: 2px;
+    background: linear-gradient(90deg, #e50914, #ff1a1a, #e50914);
+    border-radius: 2px 2px 0 0;
+    animation: netflixPulse 2s ease-in-out infinite;
+}
+
+@keyframes netflixPulse {
+    0%, 100% {
+        box-shadow: 0 0 5px #e50914;
+    }
+    50% {
+        box-shadow: 0 0 15px #e50914, 0 0 20px rgba(229, 9, 20, 0.5);
+    }
 }
 
 /* Responsive */
+@media (max-width: 1100px) {
+    .dropdown-menu {
+        min-width: 600px;
+    }
+    
+    .categories-column a {
+        padding: 15px 20px;
+    }
+    
+    .categories-column h4 {
+        padding: 20px 20px 12px 20px;
+    }
+}
+
 @media (max-width: 768px) {
     .dropdown-menu {
-        min-width: 320px;
+        min-width: 300px;
         left: -50px;
     }
     
     .dropdown-content {
         flex-direction: column;
-        gap: 25px;
-        padding: 20px;
+    }
+    
+    .categories-column {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .categories-column:last-child {
+        border-bottom: none;
     }
     
     #menu-main-list li {
-        font-size: 1.1em;
-        padding: 12px 15px;
-        margin: 0 3px;
+        font-size: 0.85em;
+        padding: 0 15px;
+        height: 60px;
     }
     
-    .dropdown:hover::after {
+    .dropdown:hover::before {
         left: 15px;
         right: 15px;
     }
+    
+    .categories-column a {
+        padding: 14px 20px;
+        font-size: 13px;
+    }
+    
+    .categories-column h4 {
+        padding: 18px 20px 10px 20px;
+        font-size: 13px;
+    }
+}
+
+/* Efecto de brillo global */
+#menu-main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(229, 9, 20, 0.3), transparent);
 }

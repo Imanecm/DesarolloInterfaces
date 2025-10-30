@@ -59,78 +59,64 @@
     
     <div class="category-header">
         <h1 class="category-title">Todas las Películas</h1>
-        <p class="category-subtitle">Descubre nuestro catálogo completo de películas</p>
+        <p class="category-subtitle">Todas las categorías: Drama, Comedia, Acción, Aventura, etc.</p>
         <a href="index.html" class="back-button">← Volver al Inicio</a>
     </div>
     
     <div class="movies-count" id="movies-count"></div>
     
     <div id="movies-container">
-        <!-- TODAS LAS PELÍCULAS APARECERÁN AQUÍ -->
+        <!-- TODAS LAS PELÍCULAS DE TODAS LAS CATEGORÍAS APARECERÁN AQUÍ -->
     </div>
 
     <script>
-    // Cargar solo películas (excluyendo anime y series)
-    fetch('data/data.json')
-        .then(response => response.json())
-        .then(data => {
-            const allMovies = data.movies_list || [];
-            
-            // Lista de series conocidas para excluirlas
-            const seriesTitles = [
-                'Friends', 'Los Serrano', 'La que se avecina', 'Breaking Bad', 
-                'Euphoria', 'The Walking Dead', 'Stranger Things', 'Black Mirror',
-                'Dark', 'Doctor Who', 'The Haunting of Hill House', 'American Horror Story',
-                'Vis a vis', 'Sky Rojo', 'The Last of Us', 'Los 100', 'Vikingos'
-            ];
-            
-            const peliculas = allMovies.filter(movie => {
-                // Excluir anime
-                if (movie.category === 'Anime') return false;
+        // Cargar TODAS las películas de TODAS las categorías (excluyendo solo Anime)
+        fetch('data/data.json')
+            .then(response => response.json())
+            .then(data => {
+                const todasLasPeliculas = data.movies_list || [];
                 
-                // Excluir series conocidas
-                if (seriesTitles.some(serie => movie.title.includes(serie))) return false;
+                // Filtrar: incluir todo EXCEPTO anime
+                const peliculasFiltradas = todasLasPeliculas.filter(movie => 
+                    movie.category !== 'Anime'
+                );
                 
-                // Incluir el resto
-                return true;
-            });
-            
-            const countElement = document.getElementById('movies-count');
-            countElement.textContent = `Se encontraron ${peliculas.length} películas`;
-            
-            const container = document.getElementById('movies-container');
-            
-            if (peliculas.length === 0) {
-                container.innerHTML = `
-                    <div style="text-align: center; padding: 50px; color: #666;">
-                        <h3>No se encontraron películas</h3>
-                    </div>
-                `;
-                return;
-            }
-            
-            console.log('Películas encontradas:', peliculas); // Para debug
-            
-            // Mostrar películas
-            peliculas.forEach(movie => {
-                const movieCard = `
-                    <div class="card">
-                        <img class="image" src="images/${movie.image}" alt="${movie.title}" 
-                             onerror="this.src='https://via.placeholder.com/300x450/333/fff?text=Imagen+No+Disponible'">
-                        <div class="info">
-                            <div class="movie-title">${movie.title}</div>
-                            ${movie.category ? `<div class="movie-category">${movie.category}</div>` : ''}
-                            <a class="button" href="movie-info.html?title=${encodeURIComponent(movie.title)}">Ver más</a>
+                const countElement = document.getElementById('movies-count');
+                countElement.textContent = `Se encontraron ${peliculasFiltradas.length} películas de todas las categorías`;
+                
+                const container = document.getElementById('movies-container');
+                
+                if (peliculasFiltradas.length === 0) {
+                    container.innerHTML = `
+                        <div style="text-align: center; padding: 50px; color: #666;">
+                            <h3>No se encontraron películas</h3>
                         </div>
-                    </div>
-                `;
-                container.insertAdjacentHTML('beforeend', movieCard);
+                    `;
+                    return;
+                }
+                
+                console.log('Películas encontradas:', peliculasFiltradas); // Para debug
+                
+                // Mostrar TODAS las películas
+                peliculasFiltradas.forEach(movie => {
+                    const movieCard = `
+                        <div class="card">
+                            <img class="image" src="images/${movie.image}" alt="${movie.title}" 
+                                 onerror="this.src='https://via.placeholder.com/300x450/333/fff?text=Imagen+No+Disponible'">
+                            <div class="info">
+                                <div class="movie-title">${movie.title}</div>
+                                ${movie.category ? `<div class="movie-category">${movie.category}</div>` : '<div class="movie-category">Película</div>'}
+                                <a class="button" href="movie-info.html?title=${encodeURIComponent(movie.title)}">Ver más</a>
+                            </div>
+                        </div>
+                    `;
+                    container.insertAdjacentHTML('beforeend', movieCard);
+                });
+            })
+            .catch(error => {
+                console.error('Error al cargar las películas:', error);
             });
-        })
-        .catch(error => {
-            console.error('Error al cargar las películas:', error);
-        });
-</script>
+    </script>
     
     <footer class="footer">
         <p>Mi página de Streaming - Todos los derechos reservados</p>
