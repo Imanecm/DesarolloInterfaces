@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/styles-mainpage.css">
+        <link rel="stylesheet" type="text/css" href="css/styles-menu-main.css">
+        <link rel="stylesheet" type="text/css" href="css/styles-movie-container.css"
+        <meta charset="UTF-8">
+        <title>Movie Streaming</title>
+    </head>
+    <body>
+        <!-- BARRA DE NAVEGACIÓN PRINCIPAL -->
+        <header id="menu-main">
+            <ul id="menu-main-list">
+                <!-- CONTENIDO GENERADO AUTOMÁTICAMENTE EN "js/main-menu.js" -->
+            </ul>
+        </header>
+        <script src="js/main-menu.js"></script>
+
+        <h2 id="categoria-nombre"></h2>
+        <div id="movies-container">
+            <!-- CONTENIDO GENERADO AUTOMÁTICAMENTE EN "js/movies-list.js" -->
+        </div>
+        <script src="js/movies-list.js"></script>
+        <script>
+            const params = new URLSearchParams(window.location.search);
+            const categoria = params.get("category");
+
+            if (cateogoria) {
+                document.title = `Categoría: ${categoria}`;
+                document.getElementById("categoria-nombre")
+
+                fetch("data/data.json")
+                .then(response => response.json())
+                .then(data => {
+                    const filtradas = data.movie_content.filter(
+                        movie => movie.category.toLowerCase() === categoria.toLowerCase()
+                    );
+                    mostrarPeliculas(filtradas);
+                })
+                .catch(error => console.error("Error al cargar el archivo JSON", error));
+            }
+
+            function mostrarPeliculas(lista) {
+                const container = document.getElementById('movies-container');
+                container.innerHTML = ''; // Limpia antes de agregar nuevas
+
+                lista.forEach(movie => {
+                    generateMovieCard2(movie);
+                });
+            }
+
+            function generateMovieCard2(movie) {
+                const container = document.getElementById('movies-container');
+
+                container.insertAdjacentHTML('beforeend', `
+                    <div class="card">
+                        <img class="image" src="images/${movie.image}" alt="${movie.title}">
+                        <div class="info">
+                            <div class="movie-title">${movie.title}</div>
+                            <a class="button" href="movie-info.html?title=${encodeURIComponent(movie.title)}" target="_blank">Ver más</a>
+                        </div>
+                    </div>
+                `);
+            }
+        </script>
+    </body>
+</html>

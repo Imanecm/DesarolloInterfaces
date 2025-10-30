@@ -80,28 +80,32 @@
             "title": "Inception",
             "description": "A skilled thief, who steals corporate secrets through dream-sharing technology, is given a chance to erase his criminal past if he can implant an idea into a target's subconscious.",
             "castlist": "Leonardo DiCaprio – Dom Cobb, Joseph Gordon-Levitt – Arthur, Ellen Page – Ariadne, Tom Hardy – Eames, Cillian Murphy – Robert Fischer",
-            "trailer": "https://www.youtube.com/watch?v=YoHD9XEInc0"
+            "trailer": "https://www.youtube.com/watch?v=YoHD9XEInc0",
+            "category": "Drama"
         },
         {
             "image": "endgame.jpg",
             "title": "Avengers: End Game",
             "description": "After the devastating events of Infinity War, the remaining Avengers assemble once more to reverse Thanos’ actions and restore balance to the universe in one final stand.",
             "castlist": "Robert Downey Jr. – Tony Stark / Iron Man, Chris Evans – Steve Rogers / Captain America, Mark Ruffalo – Bruce Banner / Hulk, Chris Hemsworth – Thor, Scarlett Johansson – Natasha Romanoff / Black Widow",
-            "trailer": "https://www.youtube.com/watch?v=TcMBFSGVi1c"
+            "trailer": "https://www.youtube.com/watch?v=TcMBFSGVi1c",
+            "category": "Drama"
         },
         {
             "image": "batman.jpg",
             "title": "The Dark Knight",
             "description": "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc on Gotham, forcing Batman closer to crossing the line between hero and vigilante.",
             "castlist": "Christian Bale – Bruce Wayne / Batman, Heath Ledger – Joker, Aaron Eckhart – Harvey Dent, Gary Oldman – James Gordon, Michael Caine – Alfred Pennyworth",
-            "trailer": "https://www.youtube.com/watch?v=EXeTwQWrcwY"
+            "trailer": "https://www.youtube.com/watch?v=EXeTwQWrcwY",
+            "category": "Drama"
         },
         {
             "image": "interestellar.jpg",
             "title": "Interstellar",
             "description": "A team of explorers travels through a wormhole in space in an attempt to ensure humanity’s survival as Earth becomes uninhabitable.",
             "castlist": "Matthew McConaughey – Cooper, Anne Hathaway – Amelia Brand, Jessica Chastain – Murphy, Michael Caine – Professor Brand, Matt Damon – Mann",
-            "trailer": "https://www.youtube.com/watch?v=zSWdZVtXT7E"
+            "trailer": "https://www.youtube.com/watch?v=zSWdZVtXT7E",
+            "category": "Drama"
         },
         {
             "image": "BreakingBad",

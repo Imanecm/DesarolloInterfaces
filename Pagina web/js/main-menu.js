@@ -40,11 +40,11 @@ function createMenuSection(section) {
 
 // Cargar el menú
 fetch('data/data.json')
-    .then(response => response.json())
-    .then(data => {
-        const sections = data.mainmenu_items;
-        sections.forEach(createMenuSection);
-    })
-    .catch(error => {
-        console.error('Error al cargar el archivo JSON:', error);
-    });
+.then(response => response.json())
+.then(data => {
+    const sections = data.mainmenu_items;
+    sections.forEach(createMenuSection);
+})
+.catch(error => {
+    console.error('Error al cargar el archivo JSON:', error);
+});
