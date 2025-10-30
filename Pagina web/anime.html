@@ -70,12 +70,12 @@
     </div>
 
     <script>
-    // Cargar solo anime
+    // Cargar TODOS los animes
     fetch('data/data.json')
         .then(response => response.json())
         .then(data => {
-            const allMovies = data.movies_list || [];
-            const animes = allMovies.filter(movie => 
+            const todasLasPeliculas = data.movies_list || [];
+            const animes = todasLasPeliculas.filter(movie => 
                 movie.category === 'Anime'
             );
             
@@ -87,12 +87,11 @@
             if (animes.length === 0) {
                 container.innerHTML = `
                     <div style="text-align: center; padding: 50px; color: #666;">
+                        <h3>No se encontraron animes</h3>
                     </div>
                 `;
                 return;
             }
-            
-            console.log('Animes encontrados:', animes); // Para debug
             
             // Mostrar animes
             animes.forEach(anime => {

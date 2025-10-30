@@ -9,23 +9,38 @@ function createMenuSection(section) {
             <a href="${section.reference}" class="menu-links dropdown-toggle">${section.name}</a>
             <div class="dropdown-menu categories-dropdown">
                 <div class="dropdown-content">
+                    <!-- COLUMNA PELÍCULAS -->
                     <div class="categories-column">
-                        <h4>Películas y Anime</h4>
+                        <h4>PELÍCULAS</h4>
                         <ul>
-                            <li><a href="peliculas.html">Todas las Películas</a></li>
-                            <li><a href="anime.html">Todo el Anime</a></li>
-                            <li><a href="series.html">Todas las Series</a></li>
+                            <li><a href="categoria-drama-peliculas.html">Drama</a></li>
+                            <li><a href="categoria-comedia-peliculas.html">Comedia</a></li>
+                            <li><a href="categoria-aventura-peliculas.html">Aventura</a></li>
+                            <li><a href="categoria-terror-peliculas.html">Terror</a></li>
+                            <li><a href="categoria-ciencia-ficcion-peliculas.html">Ciencia Ficción</a></li>
                         </ul>
                     </div>
+                    
+                    <!-- COLUMNA SERIES -->
                     <div class="categories-column">
-                        <h4>Géneros</h4>
+                        <h4>SERIES</h4>
                         <ul>
-                            <li><a href="categoria.html?genero=Drama">Drama</a></li>
-                            <li><a href="categoria.html?genero=Comedia">Comedia</a></li>
-                            <li><a href="categoria.html?genero=Acción">Acción</a></li>
-                            <li><a href="categoria.html?genero=Aventura">Aventura</a></li>
-                            <li><a href="categoria.html?genero=Ciencia Ficción">Ciencia Ficción</a></li>
-                            <li><a href="categoria.html?genero=Terror">Terror</a></li>
+                            <li><a href="categoria-drama-series.html">Drama</a></li>
+                            <li><a href="categoria-comedia-series.html">Comedia</a></li>
+                            <li><a href="categoria-aventura-series.html">Aventura</a></li>
+                            <li><a href="categoria-terror-series.html">Terror</a></li>
+                            <li><a href="categoria-ciencia-ficcion-series.html">Ciencia Ficción</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- COLUMNA ANIME -->
+                    <div class="categories-column">
+                        <h4>ANIME</h4>
+                        <ul>
+                            <li><a href="categoria-aventura-anime.html">Aventura</a></li>
+                            <li><a href="categoria-drama-anime.html">Drama</a></li>
+                            <li><a href="categoria-terror-anime.html">Terror</a></li>
+                            <li><a href="categoria-accion-anime.html">Acción</a></li>
                         </ul>
                     </div>
                 </div>
