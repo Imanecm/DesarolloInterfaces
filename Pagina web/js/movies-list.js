@@ -1,4 +1,4 @@
-
+/* --- Función para pasar de string a número --- */
 function getNumericViews(viewsValue) {
     if (!viewsValue) return 0;
     const viewsString = String(viewsValue); 
@@ -6,30 +6,38 @@ function getNumericViews(viewsValue) {
     return parseInt(cleanNumber, 10);
 }
 
+/* --- Cargar datos --- */
+/* --- Trae el archivo indicado de donde se extraerán los datos --- */
 fetch('data/data-multimedia-content.json')
+/* --- El archivo se descarga correctamente y convierte la respuesta en un objeto js legible --- */
 .then(response => response.json())
+/* --- Se utilizan los datos obtenidos --- */
 .then(data => {
-    let content = data.MULTIMEDIA_CONTENT;
+    /* --- Almacenamos en content el array completo de contenido multimedia --- */
+    const content = data.MULTIMEDIA_CONTENT;
+    /* --- Guardamos en container el contenedor donde irán las películas --- */
+    const container = document.getElementById('movies-container');
 
-    // Pre-procesar todos los elementos para añadir el campo numérico de ordenación
+    /* --- Pre-procesar todos los elementos para añadir el campo numérico de ordenación --- 
+     * map -> Recorre cada objeto del array y crea un nuevo array con los objetos transformados */
     const processedContent = content.map(item => {
         item.views_numeric = getNumericViews(item.views);
         return item;
     });
 
-    // ------------------------------------
-    // FUNCIONES PARA MOSTRAR LAS SECCIONES
-    // ------------------------------------
-    
+    /* --- Funcion que muestra una sección de el contenido TOP 5 mas visto ---
+     * titleText -> Título de la sección
+     * categoryFilter -> Categoría por la que se va a filtrar
+     * dataArray -> Array que almacena el contenido que se va a filtrar */
     function showSection(titleText, cateogryFilter, dataArray) {
         /* --- Filtrar, ordear y recortar el top 5 ---
-         * Con .filter filtramos 
+         * Con .filter filtramos el array dejando los elementos cuya categoría coincide con "categoryFilter" 
+         * Con .sort ordenamos los elementos filtrados de mayor a menos según el número de visualizaciones 
+         * Con .slice cortamos el array a solo 5 elementos, que son los que se mostraran, ya que es un TOP 5 de cada cateogría */
         const filteredContent = dataArray
             .filter(item => item.category === cateogryFilter)
             .sort((a, b) => b.views_numeric - a.views_numeric)
             .slice(0, 5);
-
-        const container = document.getElementById('movies-container');
     
         /* --- Si no hay contenido no se muestra nada --- */
         if (filteredContent.length === 0) {
@@ -37,22 +45,34 @@ fetch('data/data-multimedia-content.json')
             return;
         }
 
-        container.insertAdjacentHTML('beforeend', `<h1 class="section-title">${titleText}</h1>`);
+        /* --- Insertamos el título de la sección ---
+         * container -> Contenedor donde se insertará el contenido
+         * insertAdjacentHTML -> Función que inserta el contenido
+            * Primer parámetro -> Donde se inserta
+            * Segundo parámetro -> Contenido HTML que se inserta */
+        container.insertAdjacentHTML('beforeend', `
+            <h1 class="section-title">${titleText}</h1>`
+        );
         
+        /* --- Creamos un div donde irán las 5 tarjetas --- */
         const cardRow = document.createElement('div');
-        cardRow.classList.add('card-row'); // Usaremos esta clase en el CSS
+        /* --- Añadimos la clase "card-row" al elemento div --- */
+        cardRow.classList.add('card-row');
         
-        /* --- Generar el HTML de todas las tarjetas --- */
-        filteredContent.forEach(movie => {
-            cardRow.innerHTML += createCard(movie);
+        /* --- Generar el HTML de todas las tarjetas --- 
+         * filteredContent -> Array que contiene el contenido filtrado */
+        filteredContent.forEach(content => {
+            cardRow.innerHTML += createCard(content);
         });
 
+        /* --- Añadimos el contenido de cardRow al contenedor --- */
         container.appendChild(cardRow);
     }
 
-    // ------------------------
-    // LLAMADAS A LAS SECCIONES
-    // ------------------------
+    container.insertAdjacentHTML('beforeend', `
+            <div class="page-title">Lo mas visto</div>
+        `
+    );
 
     /* --- Mostrar TOP 5 Películas --- */
     showSection("Películas", "Peliculas", processedContent);
@@ -67,13 +87,14 @@ fetch('data/data-multimedia-content.json')
 	console.error('Error al cargar el archivo JSON:', error);
 });
 
-function createCard(movie) {
+/* --- Función que contiene la plantilla de las tarjetas --- */
+function createCard(multiContent) {
     return `
         <div class="card">
-            <img class="image" src="images/${movie.subcategory}/${movie.image}" alt="${movie.title}">
+            <img class="image" src="images/${multiContent.subcategory}/${multiContent.image}" alt="${multiContent.title}">
             <div class="info">
-                <div class="movie-title">${movie.title}</div>
-                <a class="button" href="movie-info.html?title=${encodeURIComponent(movie.title)}">Ver más</a>
+                <div class="movie-title">${multiContent.title}</div>
+                <a class="button" href="movie-info.html?title=${encodeURIComponent(multiContent.title)}">Ver más</a>
             </div>
         </div>
     `

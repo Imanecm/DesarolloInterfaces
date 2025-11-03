@@ -53,7 +53,8 @@ function createMenuSection(section) {
 
         subcategorias.forEach(subcat => {
             subcat.addEventListener('click', (event) => {
-                event.preventDefault(); /* --- evita el comportamiento por defecto de la etiqueta a --- */
+                /* --- evita el comportamiento por defecto de la etiqueta a --- */
+                event.preventDefault();
                 const subcategoria = subcat.getAttribute('data-subcategory');
 
                 /* --- Encuentra la categoría padre --- */
@@ -71,14 +72,6 @@ function createMenuSection(section) {
     document.getElementById('menu-main-list').appendChild(menuSection);
 }
 
-/*
- *
- *
- * 
- * 
- * 
- * 
-*/
 fetch('data/data-main-menu.json')
 .then(response => response.json())
 .then(data => {

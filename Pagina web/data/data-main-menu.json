@@ -12,10 +12,6 @@
         {
             "name": "Contacto",
             "reference": "contacto.html"
-        },
-        {
-            "name": "Subscribirse",
-            "reference": "123.html"
         }
     ]
 }

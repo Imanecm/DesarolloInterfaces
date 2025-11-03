@@ -1,43 +1,51 @@
-  /* Quitamos los márgenes y usamos el border box para que el alto y el ancho incluyan el pading y el borde.*/
-  * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-  }
 
-  body {
-      height: 100vh;
-      /*hacemos un degradado para el fondo*/
-      background: linear-gradient(135deg, #0d0d0d, #1a1a1a, #2c2c2c);
-      /*centramos el formulario */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-  }
 
   /* (Contenedor) Caja donde esta el formulario */
-  .contenedor {
-      background: rgba(0, 0, 0, 0.75);
-      padding: 40px;
-      border-radius: 12px;
-      width: 350px;
-      color: #fff;
-      /*sombra alrededor*/
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6); 
-      /* transición al pasar el raton */
-      transition: transform 0.4s ease;
-      
-  }
+ #contenedor {
+    position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	backdrop-filter: blur(5px);
+	opacity: 0;
+	pointer-events: none;
+	transition: transform 0.4s ease;
+	z-index: 999;
+}
+#contenedor.visible {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
 
-  .contenedor:hover {
+/* Formulario interno */
+#contenedor form {
+    background: #222;
+    padding: 40px;
+    border-radius: 12px;
+    width: 350px;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    transform: scale(0.8);
+    transition: transform 0.4s ease;
+}
+
+#contenedor.visible form {
+    transform: scale(1);
+}
+
+  #contenedor:hover {
     /* le ponemos un poco de zoom*/
       transform: scale(1.02);
       
   }
 
   /*titulo del formulario*/
-  .contenedor h2 {
+  #contenedor h2 {
       text-align: center;
       margin-bottom: 25px;
       font-weight: 600;
@@ -53,7 +61,7 @@
 
   .campo input,
   .campo select {
-      width: 100%;
+      width: 95%;
       padding: 12px;
       background: #333;
       border: none;

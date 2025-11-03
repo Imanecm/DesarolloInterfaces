@@ -1,48 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/styles-formulario.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FORMULARIO</title>
 </head>
-
 <body>
-    </head>
-
-    <body>
-        
-        <div class="contenedor">
+        <form id="formularioInscripcion">
             <h2>Formulario de Inscripción</h2>
-            <form id="formularioInscripcion">
-                <!--le ponemos el tipo a cada campo, el placeholder hace que se vea dentro del campo la 
-                informacion requerida, ponemos que todos son requeridos, en la edad ponemos un minimo y un maximo 
-                de edad y en el genero ponemos los valores de todas las categorias que tenemos.-->
-                <div class="campo">
-                    <input type="text" id="nombre" placeholder="Nombre completo" required>
-                </div>
-                <div class="campo">
-                    <input type="email" id="correo" placeholder="Correo electrónico" required>
-                </div>
-                <div class="campo">
-                    <input type="number" id="edad" placeholder="Edad" min="10" max="120" required>
-                </div>
-                <div class="campo">
-                    <select id="genero" required>
-                        <option value="">Selecciona tu género favorito</option>
-                        <option value="Acción">Acción</option>
-                        <option value="Comedia">Comedia</option>
-                        <option value="Drama">Drama</option>
-                        <option value="Terror">Terror</option>
-                        <option value="Aventura">Aventura</option>
-                    </select>
-                </div>
-                <button type="submit" class="boton">Enviar</button>
-                <div class="mensaje" id="mensajeExito">¡Inscripción exitosa!</div>
-            </form>
-        </div>
-        <script src="js/formulario.js"></script>
-    </body>
-
+            <!--le ponemos el tipo a cada campo, el placeholder hace que se vea dentro del campo la 
+            informacion requerida, ponemos que todos son requeridos, en la edad ponemos un minimo y un maximo 
+            de edad y en el genero ponemos los valores de todas las categorias que tenemos.-->
+            <div class="campo">
+                <input type="text" id="nombre" placeholder="Nombre completo" required>
+            </div>
+            <div class="campo">
+                <input type="email" id="correo" placeholder="Correo electrónico" required>
+            </div>
+            <div class="campo">
+                <input type="number" id="edad" placeholder="Edad" min="10" max="120" required>
+            </div>
+            <div class="campo">
+                <select id="genero" required>
+                    <option value="">Selecciona tu género favorito</option>
+                    <option value="Acción">Acción</option>
+                    <option value="Comedia">Comedia</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Terror">Terror</option>
+                    <option value="Aventura">Aventura</option>
+                </select>
+            </div>
+            <button type="submit" class="boton">Enviar</button>
+            <div class="mensaje" id="mensajeExito">¡Inscripción exitosa!</div>
+        </form>
+    <script src="js/formulario.js"></script>
+</body>
 </html>
