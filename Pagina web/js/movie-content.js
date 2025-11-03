@@ -5,7 +5,7 @@ function generateMovieContent(movie) {
         <div class="navbar">Detalles de la película - ${movie.title}</div>
 
         <div class="movie-container">
-            <img class="movie-poster" src="images/${movie.image}" alt="${movie.title}">
+            <img class="movie-poster" src="images/${movie.subcategory}/${movie.image}" alt="${movie.title}">
             
             <div class="movie-details">
                 <h2 class="movie-title">${movie.title}</h2>
@@ -28,10 +28,10 @@ function generateMovieContent(movie) {
     `);
 }
 
-fetch('data/data.json')
+fetch('data/data-multimedia-content.json')
 .then(response => response.json())
 .then(data=> {
-	const movie = data.movie_content;
+	const movie = data.MULTIMEDIA_CONTENT;
 
 	const params = new URLSearchParams(window.location.search);
     const movieTitle = params.get('title');

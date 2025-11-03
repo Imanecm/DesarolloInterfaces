@@ -53,6 +53,18 @@
     font-weight: bold;
     margin-bottom: 10px;
 }
+.movie-views {
+    font-size: 1.0em;
+    color: rgba(138, 137, 137, 0.9);
+    margin-bottom: 10px;
+}
+
+.views-img {
+    width: 15px;
+    height: 15px;
+    background-color: white;
+}
+
 .description {
     font-size: 14px;
     color: #bbb;

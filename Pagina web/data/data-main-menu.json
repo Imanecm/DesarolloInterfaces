@@ -1,0 +1,21 @@
+{
+    "MAINMENU_ITEMS": [
+        {
+            "name": "Inicio",
+            "reference": "index.html"
+        },
+        {
+            "name": "Categorías",
+            "reference": "#",
+            "hasDropdown": true
+        },
+        {
+            "name": "Contacto",
+            "reference": "contacto.html"
+        },
+        {
+            "name": "Subscribirse",
+            "reference": "123.html"
+        }
+    ]
+}

@@ -1,3 +1,4 @@
+
 function getNumericViews(viewsValue) {
     if (!viewsValue) return 0;
     const viewsString = String(viewsValue); 
@@ -5,15 +6,10 @@ function getNumericViews(viewsValue) {
     return parseInt(cleanNumber, 10);
 }
 
-fetch('data/data.json')
+fetch('data/data-multimedia-content.json')
 .then(response => response.json())
 .then(data => {
-    const container = document.getElementById('movies-container');
-    
-    // Limpiamos el contenedor antes de añadir el nuevo contenido (títulos y tarjetas)
-    container.innerHTML = ''; 
-    
-    let content = data.movie_content;
+    let content = data.MULTIMEDIA_CONTENT;
 
     // Pre-procesar todos los elementos para añadir el campo numérico de ordenación
     const processedContent = content.map(item => {
@@ -26,12 +22,15 @@ fetch('data/data.json')
     // ------------------------------------
     
     function showSection(titleText, cateogryFilter, dataArray) {
-        /* --- Filtrar, ordear y recortar el top 5 --- */
+        /* --- Filtrar, ordear y recortar el top 5 ---
+         * Con .filter filtramos 
         const filteredContent = dataArray
             .filter(item => item.category === cateogryFilter)
             .sort((a, b) => b.views_numeric - a.views_numeric)
             .slice(0, 5);
 
+        const container = document.getElementById('movies-container');
+    
         /* --- Si no hay contenido no se muestra nada --- */
         if (filteredContent.length === 0) {
             container.innerHTML = `<p>No hay contenido disponible.</p>`;

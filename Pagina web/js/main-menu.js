@@ -71,11 +71,20 @@ function createMenuSection(section) {
     document.getElementById('menu-main-list').appendChild(menuSection);
 }
 
-// Cargar el menú
-fetch('data/data.json')
+/*
+ *
+ *
+ * 
+ * 
+ * 
+ * 
+*/
+fetch('data/data-main-menu.json')
 .then(response => response.json())
 .then(data => {
-    const sections = data.mainmenu_items;
+    const sections = data.MAINMENU_ITEMS;
+
+    /* --- CREA GENERA CADA UNA DE LA SECCIONES ALMACENADAS EN EL JSON --- */
     sections.forEach(createMenuSection);
 })
 .catch(error => {

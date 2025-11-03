@@ -26,10 +26,10 @@
             if (categoria) {
                 document.title = `Categoría: ${categoria}`;
 
-                fetch("data/data.json")
+                fetch("data/data-multimedia-contEnt.json")
                 .then(response => response.json())
                 .then(data => {
-                    const filtradas = data.movie_content.filter(movie => {
+                    const filtradas = data.MULTIMEDIA_CONTENT.filter(movie => {
                         const matchCategory = movie.category.toLowerCase() === categoria.toLowerCase();
                         const matchSub = subcategoria 
                             ? (movie.subcategory && movie.subcategory.toLowerCase() === subcategoria.toLowerCase()) 
@@ -72,18 +72,22 @@
                         <img class="image" src="images/${movie.subcategory}/${movie.image}" alt="${movie.title}">
                         <div class="info">
                             <div class="movie-title">${movie.title}</div>
-                            
+                            <div class="movie-views">
+                                ${movie.views}
+                                <img src="images/icons/eye.png" alt="Visualizaciones" class="views-img">
+                            </div>
+                            <a class="button" href="movie-info.html?title=${encodeURIComponent(movie.title)}" target="_blank">Ver más</a>
                         </div>
                     </div>
                 `
             }
 
             document.addEventListener('click', (e) => {
-    const card = e.target.closest('.card');
-    if (card && card.dataset.link) {
-        window.location.href = card.dataset.link;
-    }
-});
+                const card = e.target.closest('.card');
+                if (card && card.dataset.link) {
+                    window.location.href = card.dataset.link;
+                }
+            });
         </script>
     </body>
 </html>
