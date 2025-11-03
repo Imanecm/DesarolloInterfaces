@@ -1,4 +1,3 @@
-/* Menú (Barra Horizontal) - Estilo Netflix Premium */
 #menu-main {
     display: flex;
     text-align: left;
@@ -57,7 +56,6 @@
     color: #ffffff;
 }
 
-/* DISEÑO DROPDOWN - NETFLIX PREMIUM */
 .dropdown {
     position: relative;
 }
@@ -227,12 +225,10 @@
     right: 20px;
 }
 
-/* Comportamiento del dropdown */
 .dropdown:hover .dropdown-menu {
     display: block;
 }
 
-/* Efecto hover específico para el dropdown */
 .dropdown:hover {
     background: transparent;
 }
@@ -241,7 +237,6 @@
     color: #ffffff;
 }
 
-/* Línea roja inferior al hacer hover - Estilo Netflix */
 .dropdown:hover::before {
     content: '';
     position: absolute;
@@ -263,7 +258,6 @@
     }
 }
 
-/* Responsive */
 @media (max-width: 1100px) {
     .dropdown-menu {
         min-width: 600px;
@@ -319,7 +313,6 @@
     }
 }
 
-/* Efecto de brillo global */
 #menu-main::before {
     content: '';
     position: absolute;
