@@ -1,0 +1,106 @@
+  /* Quitamos los márgenes y usamos el border box para que el alto y el ancho incluyan el pading y el borde.*/
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+  }
+
+  body {
+      height: 100vh;
+      /*hacemos un degradado para el fondo*/
+      background: linear-gradient(135deg, #0d0d0d, #1a1a1a, #2c2c2c);
+      /*centramos el formulario */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  /* (Contenedor) Caja donde esta el formulario */
+  .contenedor {
+      background: rgba(0, 0, 0, 0.75);
+      padding: 40px;
+      border-radius: 12px;
+      width: 350px;
+      color: #fff;
+      /*sombra alrededor*/
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6); 
+      /* transición al pasar el raton */
+      transition: transform 0.4s ease;
+      
+  }
+
+  .contenedor:hover {
+    /* le ponemos un poco de zoom*/
+      transform: scale(1.02);
+      
+  }
+
+  /*titulo del formulario*/
+  .contenedor h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-weight: 600;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+  }
+
+  /* estilos para los campos de input y el select del js */
+  .campo {
+    /*espacios entre un campo y otro*/
+      margin-bottom: 20px;
+  }
+
+  .campo input,
+  .campo select {
+      width: 100%;
+      padding: 12px;
+      background: #333;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      /* Transición suave */
+  }
+
+  /* cuando hacemos foco en el campo cambia */
+  .campo input:focus,
+  .campo select:focus {
+      background: #444;
+      transform: scale(1.03);
+      /*borde rojo*/
+      outline: 2px solid #e50914; 
+      box-shadow: 0 0 10px #e50914;
+  }
+
+  /* boton de enviar el fomulario*/
+  .boton {
+      width: 100%;
+      background: #e50914;
+      border: none;
+      padding: 12px;
+      border-radius: 5px;
+      color: #fff;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      /* transición para el hover */
+      box-shadow: 0 0 8px rgba(229, 9, 20, 0.5);
+  }
+
+  /* efectos para cuando pasemos el raton por el boton*/
+  .boton:hover {
+      background: #f6121d;
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(229, 9, 20, 0.8);
+  }
+
+  /* mensaje de exito que desde un principio esta escondido con el display none */
+  .mensaje {
+      text-align: center;
+      margin-top: 15px;
+      color: rgb(115, 214, 115);
+      display: none;
+      font-weight: bold;
+      transition: opacity 0.3s ease;
+  }
