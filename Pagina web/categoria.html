@@ -3,7 +3,7 @@
     <head>
         <link rel="stylesheet" type="text/css" href="css/styles-mainpage.css">
         <link rel="stylesheet" type="text/css" href="css/styles-menu-main.css">
-        <link rel="stylesheet" type="text/css" href="css/styles-movie-container.css"
+        <link rel="stylesheet" type="text/css" href="css/styles-movie-container.css">
         <meta charset="UTF-8">
         <title>Movie Streaming</title>
     </head>
@@ -15,53 +15,75 @@
             </ul>
         </header>
         <script src="js/main-menu.js"></script>
-
-        <h2 id="categoria-nombre"></h2>
         <div id="movies-container">
             <!-- CONTENIDO GENERADO AUTOMÁTICAMENTE EN "js/movies-list.js" -->
         </div>
-        <script src="js/movies-list.js"></script>
         <script>
             const params = new URLSearchParams(window.location.search);
             const categoria = params.get("category");
+            const subcategoria = params.get("subcategory");
 
-            if (cateogoria) {
+            if (categoria) {
                 document.title = `Categoría: ${categoria}`;
-                document.getElementById("categoria-nombre")
 
                 fetch("data/data.json")
                 .then(response => response.json())
                 .then(data => {
-                    const filtradas = data.movie_content.filter(
-                        movie => movie.category.toLowerCase() === categoria.toLowerCase()
-                    );
-                    mostrarPeliculas(filtradas);
+                    const filtradas = data.movie_content.filter(movie => {
+                        const matchCategory = movie.category.toLowerCase() === categoria.toLowerCase();
+                        const matchSub = subcategoria 
+                            ? (movie.subcategory && movie.subcategory.toLowerCase() === subcategoria.toLowerCase()) 
+                            : true;
+                    return matchCategory && matchSub;
+                })
+        
+                mostrarPeliculas(filtradas);
                 })
                 .catch(error => console.error("Error al cargar el archivo JSON", error));
             }
 
             function mostrarPeliculas(lista) {
                 const container = document.getElementById('movies-container');
-                container.innerHTML = ''; // Limpia antes de agregar nuevas
+                container.innerHTML = ''; 
+                
+                if (lista.length === 0) {
+                    container.innerHTML = `<p>No se encontraron películas para esta categoría y subcategoría.</p>`;
+                    return;
+                }
 
+                const cardRow = document.createElement('div');
+                cardRow.classList.add('filtered-card-row');
+                
                 lista.forEach(movie => {
-                    generateMovieCard2(movie);
+                    cardRow.innerHTML += generateMovieCard2(movie);
                 });
+                
+                container.insertAdjacentHTML('beforeend', `
+                    <div id="categoria-nombre">${categoria}</div>
+                    <div id="subcategoria-nombre">${subcategoria} (${lista.length})</div>
+                `);
+
+                container.appendChild(cardRow);
             }
 
             function generateMovieCard2(movie) {
-                const container = document.getElementById('movies-container');
-
-                container.insertAdjacentHTML('beforeend', `
-                    <div class="card">
-                        <img class="image" src="images/${movie.image}" alt="${movie.title}">
+                return `
+                    <div class="card" data-link="movie-info.html?title=${encodeURIComponent(movie.title)}">
+                        <img class="image" src="images/${movie.subcategory}/${movie.image}" alt="${movie.title}">
                         <div class="info">
                             <div class="movie-title">${movie.title}</div>
-                            <a class="button" href="movie-info.html?title=${encodeURIComponent(movie.title)}" target="_blank">Ver más</a>
+                            
                         </div>
                     </div>
-                `);
+                `
             }
+
+            document.addEventListener('click', (e) => {
+    const card = e.target.closest('.card');
+    if (card && card.dataset.link) {
+        window.location.href = card.dataset.link;
+    }
+});
         </script>
     </body>
 </html>

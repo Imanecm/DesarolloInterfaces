@@ -3,49 +3,67 @@ const rootDirectory = window.location.origin;
 function createMenuSection(section) {
     const menuSection = document.createElement('li');
     
+    /* --- Si la sección tiene hasDropdown en true --- */
     if (section.hasDropdown) {
         menuSection.classList.add('dropdown');
         menuSection.innerHTML = `
             <a href="${section.reference}" class="menu-links dropdown-toggle">${section.name}</a>
             <div class="dropdown-menu categories-dropdown">
                 <div class="dropdown-content">
+                    
                     <!-- COLUMNA PELÍCULAS -->
-                    <div class="categories-column">
+                    <div class="categories-column category" data-category="Peliculas">
                         <h4>PELÍCULAS</h4>
                         <ul>
-                            <li><a href="categoria-drama-peliculas.html">Drama</a></li>
-                            <li><a href="categoria-comedia-peliculas.html">Comedia</a></li>
-                            <li><a href="categoria-aventura-peliculas.html">Aventura</a></li>
-                            <li><a href="categoria-terror-peliculas.html">Terror</a></li>
-                            <li><a href="categoria-ciencia-ficcion-peliculas.html">Ciencia Ficción</a></li>
+                            <li><a class="subcategory" data-subcategory="Drama">Drama</a></li>
+                            <li><a class="subcategory" data-subcategory="Comedia">Comedia</a></li>
+                            <li><a class="subcategory" data-subcategory="Aventura">Aventura</a></li>
+                            <li><a class="subcategory" data-subcategory="Terror">Terror</a></li>
+                            <li><a class="subcategory" data-subcategory="Ciencia Ficción">Ciencia Ficción</a></li>
                         </ul>
                     </div>
                     
                     <!-- COLUMNA SERIES -->
-                    <div class="categories-column">
+                    <div class="categories-column category" data-category="Series">
                         <h4>SERIES</h4>
                         <ul>
-                            <li><a href="categoria-drama-series.html">Drama</a></li>
-                            <li><a href="categoria-comedia-series.html">Comedia</a></li>
-                            <li><a href="categoria-aventura-series.html">Aventura</a></li>
-                            <li><a href="categoria-terror-series.html">Terror</a></li>
-                            <li><a href="categoria-ciencia-ficcion-series.html">Ciencia Ficción</a></li>
+                            <li><a class="subcategory" data-subcategory="Drama">Drama</a></li>
+                            <li><a class="subcategory" data-subcategory="Comedia">Comedia</a></li>
+                            <li><a class="subcategory" data-subcategory="Aventura">Aventura</a></li>
+                            <li><a class="subcategory" data-subcategory="Terror">Terror</a></li>
+                            <li><a class="subcategory" data-subcategory="Ciencia Ficción">Ciencia Ficción</a></li>
                         </ul>
                     </div>
                     
                     <!-- COLUMNA ANIME -->
-                    <div class="categories-column">
+                    <div class="categories-column category" data-category="Anime">
                         <h4>ANIME</h4>
                         <ul>
-                            <li><a href="categoria-aventura-anime.html">Aventura</a></li>
-                            <li><a href="categoria-drama-anime.html">Drama</a></li>
-                            <li><a href="categoria-terror-anime.html">Terror</a></li>
-                            <li><a href="categoria-accion-anime.html">Acción</a></li>
+                            <li><a class="subcategory" data-subcategory="Drama">Drama</a></li>
+                            <li><a class="subcategory" data-subcategory="Comedia">Comedia</a></li>
+                            <li><a class="subcategory" data-subcategory="Aventura">Aventura</a></li>
+                            <li><a class="subcategory" data-subcategory="Acción">Acción</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         `;
+
+        const subcategorias = menuSection.querySelectorAll('.subcategory');
+
+        subcategorias.forEach(subcat => {
+            subcat.addEventListener('click', (event) => {
+                event.preventDefault(); /* --- evita el comportamiento por defecto de la etiqueta a --- */
+                const subcategoria = subcat.getAttribute('data-subcategory');
+
+                /* --- Encuentra la categoría padre --- */
+                const categoriaContainer = subcat.closest('.category');
+                const categoria = categoriaContainer?.getAttribute('data-category');
+
+                /* --- Redirigimos a la plantilla que generará las películas con los parámetros category y subcategory --- */
+                window.location.href = `categoria.html?category=${encodeURIComponent(categoria)}&subcategory=${encodeURIComponent(subcategoria)}`;
+            });
+        });
     } else {
         menuSection.innerHTML = `<a href="${section.reference}" class="menu-links">${section.name}</a>`;
     }

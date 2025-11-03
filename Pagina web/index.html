@@ -7,47 +7,26 @@
         <meta charset="UTF-8">
         <title>Movie Streaming</title>
     </head>
-<<<<<<< HEAD
     <body>
-        <div class="category" data-category="Acción">🎬 Acción</div>
-        <div class="category" data-category="Comedia">😂 Comedia</div>
-        <script>
-            const categorias = document.querySelectorAll('.category');
-
-            categorias.forEach(cat => {
-                cat.addEventListener('click', () => {
-                    const categoria = cat.getAttribute('data-category');
-                    window.location.href = `categoria.html?category=${encodeURIComponent(categoria)}`;
-                });
-            });
-        </script>
-        <!-- BARRA DE NAVEGACIÓN PRINCIPAL -->
-        <header id="menu-main">
-=======
-    <body> 
         <header id="menu-main"> 
->>>>>>> 6bf7f4b2bf49c1b40d793378c43b91a7c3b233d4
             <ul id="menu-main-list">
                 <!-- CONTENIDO GENERADO AUTOMÁTICAMENTE EN "js/main-menu.js" -->
             </ul>
         </header>
         <script src="js/main-menu.js"></script>
-        <div class="title">Bienvenido a tu página de streaming favorita </div>
         
-        <div class="navbar">Streaming de películas</div>
+        <h1 class="navbar">Lo mas visto</h1>
         
         <div id="movies-container">
             <!-- CONTENIDO GENERADO AUTOMÁTICAMENTE EN "js/movies-list.js" -->
         </div>
         <script src="js/movies-list.js"></script>
-        
-        <div class="navbar">Streaming de anime</div>
+
         <footer class="footer">
             <p>  Mi pagina de Streaming - Todos los derechos reservados </p>
             <p>
                 <a href="contacto.html">Contacto</a> /
                 <a href="sobre.html">Sobre nosotros</a></p>
         </footer>
-
     </body>
 </html>

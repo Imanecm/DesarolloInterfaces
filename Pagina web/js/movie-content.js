@@ -19,7 +19,7 @@ function generateMovieContent(movie) {
 
                 <div class="reviews">
                     <strong>Reviews</strong>
-                    <h3 class="review">Reomendada</h3>
+                    <h3 class="review">Recomendada</h3>
                     <h3 class="review">Mind-blowing</h3>
                     <h3 class="review">Perfecta</h3>
                 </div>

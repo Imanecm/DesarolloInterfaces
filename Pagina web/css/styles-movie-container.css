@@ -1,12 +1,17 @@
 #movies-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
+    flex-direction: column; /* Apila los elementos (títulos y filas) verticalmente */
+    width: 80%; 
+    max-width: 1200px;
+    margin: 40px auto; /* Centra el contenedor en la página */
+    padding: 0 20px;
 }
+
 .card {
-    width: 250px;
+   /* Mantiene el cálculo para que quepan 5 tarjetas con 15px de gap. */
+    flex-basis: calc(20% - 12px); 
+    flex-grow: 0; /* ⭐ CLAVE: Evita que las tarjetas crezcan para llenar el espacio. */
+    flex-shrink: 0; /* Evita que se encojan si el espacio es muy justo. */
     background-color: #222;
     border-radius: 10px;
     overflow: hidden;
@@ -15,6 +20,25 @@
 }
 .card:hover {
     transform: scale(1.05);
+}
+
+.card-row {
+    display: flex; /* Habilita el layout flexible */
+    justify-content: space-between; /* Distribuye el espacio sobrante entre los elementos */
+    gap: 15px; /* Espacio uniforme entre las tarjetas */
+    margin-bottom: 50px; /* Espacio para separar de la siguiente sección */
+    padding: 10px 0;
+    /* Si tienes menos de 5 elementos, se mantendrán a la izquierda */
+}
+
+.filtered-card-row {
+    display: flex; 
+    flex-wrap: wrap; /* ⭐ AÑADIR ESTO: Permite que las tarjetas salten a la siguiente fila. */
+    justify-content: flex-start; /* Alinea las tarjetas a la izquierda. */
+    gap: 15px; 
+    margin-bottom: 50px;
+    padding: 10px 0;
+    width: 100%; /* Asegura que la fila ocupe el 100% del contenedor. */
 }
 .image {
     width: 100%;
@@ -46,4 +70,12 @@
 }
 .button:hover {
     background-color: darkred;
+}
+
+#categoria-nombre {
+    font-size: 2.25em;
+}
+
+#subcategoria-nombre {
+    font-size: 1.75em;
 }
