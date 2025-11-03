@@ -41,7 +41,7 @@
             "views": 7505
         },
         {
-            "image": "BreakingBad",
+            "image": "BreakingBad.jpg",
             "title": "Breaking Bad",
             "description": "Un profesor de química diagnosticado con cáncer terminal comienza a fabricar metanfetamina para asegurar el futuro económico de su familia, asociándose con un exalumno problemático.",
             "castlist": "Bryan Cranston – Walter White, Aaron Paul – Jesse Pinkman, Anna Gunn – Skyler White, Dean Norris – Hank Schrader, Bob Odenkirk – Saul Goodman",
@@ -71,7 +71,7 @@
             "views": 7004
         },
         {
-            "image": "PerdiendoElJuicio.jpg",
+            "image": "Perdiendo_el_juicio.jpg",
             "title": "Perdiendo el juicio",
             "description": "Una series de comedia donde famosos enfrentan juicios absurdos y situaciones legales exageradas que sacan su lado más divertido.",
             "castlist": "Adrián Uribe – Juez, Consuelo Duval – Abogada, Ricardo Fastlicht – Fiscal, Maríazel – Testigo, Juan Carlos Casasola – Acusado",
@@ -101,7 +101,7 @@
             "views": 6739
         },
         {
-            "image": "ABeautifulMind.jpg",
+            "image": "a beautiful mind.jpg",
             "title": "Una mente brillante",
             "description": "Basada en la vida del matemático John Nash, un genio que lucha contra la esquizofrenia mientras intenta mantener su carrera y su familia.",
             "castlist": "Russell Crowe – John Nash, Jennifer Connelly – Alicia Nash, Ed Harris – William Parcher, Paul Bettany – Charles Herman, Christopher Plummer – Dr. Rosen",
@@ -111,7 +111,7 @@
             "views": 5013
         },
         {
-            "image": "TheGreenMile.jpg",
+            "image": "The Green Mile.jpg",
             "title": "Milagros inesperados",
             "description": "Un guardia de prisión en la década de 1930 descubre que uno de los condenados a muerte posee un misterioso don sobrenatural que desafía su comprensión del bien y del mal.",
             "castlist": "Tom Hanks – Paul Edgecomb, Michael Clarke Duncan – John Coffey, David Morse – Brutus Howell, Bonnie Hunt – Jan Edgecomb, Sam Rockwell – Wild Bill Wharton",
@@ -131,7 +131,7 @@
             "views": 9055
         },
         {
-            "image": "LosSerrano.jpg",
+            "image": "los_serranos.jpg",
             "title": "Los Serrano",
             "description": "Una familia española recompuesta vive situaciones cómicas y dramáticas mientras intenta adaptarse a la convivencia bajo el mismo techo.",
             "castlist": "Antonio Resines – Diego Serrano, Belén Rueda – Lucía Gómez, Fran Perea – Marcos Serrano, Verónica Sánchez – Eva Capdevila, Jesús Bonilla – Fiti Martínez",
@@ -141,7 +141,7 @@
             "views": 6214
         },
         {
-            "image": "MachosAlfa.jpg",
+            "image": "Machos alfa.jpg",
             "title": "Machos Alfa",
             "description": "Cuatro hombres de mediana edad intentan adaptarse a los cambios sociales y de género mientras enfrentan la crisis de la masculinidad moderna.",
             "castlist": "Fernando Gil – Pedro Aguilar, Gorka Otxoa – Luis, Raúl Tejón – Raúl, Fele Martínez – Santi, Paula Gallego – Daniela",
@@ -161,7 +161,7 @@
             "views": 8801
         },
         {
-            "image": "OchoApellidosVascos.jpg",
+            "image": "Ocho_apellidos_vascos.jpg",
             "title": "Ocho apellidos vascos",
             "description": "Un joven andaluz viaja al País Vasco por amor y acaba involucrado en una divertida confusión de identidades culturales.",
             "castlist": "Dani Rovira – Rafa, Clara Lago – Amaia, Carmen Machi – Merche, Karra Elejalde – Koldo, Alfonso Sánchez – Curro",
@@ -171,7 +171,7 @@
             "views": 7259
         },
         {
-            "image": "PerfectosDesconocidos.jpg",
+            "image": "perfectos_desconocidos.jpg",
             "title": "Perfectos desconocidos",
             "description": "Durante una cena entre amigos, todos deciden dejar sus teléfonos sobre la mesa y compartir cada mensaje o llamada que reciban, revelando secretos inesperados.",
             "castlist": "Belén Rueda – Eva, Eduard Fernández – Alfonso, Ernesto Alterio – Ernesto, Juana Acosta – Ana, Pepón Nieto – Antonio",
@@ -181,7 +181,7 @@
             "views": 5487
         },
         {
-            "image": "Torrente.jpg",
+            "image": "torrente.jpg",
             "title": "Torrente, el brazo tonto de la ley",
             "description": "Un policía corrupto, machista y fanático del Atlético de Madrid intenta resolver un caso mientras siembra el caos a su alrededor.",
             "castlist": "Santiago Segura – José Luis Torrente, Javier Cámara – Rafi, Neus Asensi – Amparito, Chus Lampreave – Doña Antonia, Jimmy Barnatán – Toneti",
@@ -291,7 +291,7 @@
             "views": 9673
         },
         {
-            "image": "JurassicWorld.jpg",
+            "image": "JurrasicWorld.jpg",
             "title": "Jurassic World",
             "description": "Un parque temático de dinosaurios vuelve a abrir sus puertas, pero los experimentos genéticos desatan el caos y ponen a todos en peligro.",
             "castlist": "Chris Pratt – Owen Grady, Bryce Dallas Howard – Claire Dearing, Vincent D'Onofrio – Vic Hoskins, Ty Simpkins – Gray Mitchell, Nick Robinson – Zach Mitchell",
@@ -371,7 +371,7 @@
             "views": 9560
         },
         {
-            "image": "TheSilentPlanet.jpg",
+            "image": "The silent planet.jpg",
             "title": "The Silent Planet",
             "description": "Un grupo de exploradores viaja a un planeta remoto y descubre secretos que podrían cambiar la comprensión de la humanidad sobre la vida y el universo.",
             "castlist": "Actor 1 – Personaje 1, Actor 2 – Personaje 2, Actor 3 – Personaje 3, Actor 4 – Personaje 4, Actor 5 – Personaje 5",
@@ -461,7 +461,7 @@
             "views": 9110
         },
         {
-            "image": "TheExorcist.jpg",
+            "image": "TheExorcism.jpg",
             "title": "El Exorcista",
             "description": "Una niña es poseída por un demonio, y dos sacerdotes intentan salvarla mediante un peligroso exorcismo.",
             "castlist": "Ellen Burstyn – Chris MacNeil, Max von Sydow – Padre Merrin, Linda Blair – Regan MacNeil, Jason Miller – Padre Karras, Lee J. Cobb – Teniente Kinderman",
@@ -471,7 +471,7 @@
             "views": 8555
         },
         {
-            "image": "Annabelle.jpg",
+            "image": "Anabelle.jpg",
             "title": "Annabelle",
             "description": "Una muñeca aparentemente inocente desata una series de eventos terroríficos cuando fuerzas demoníacas comienzan a atacar a una familia.",
             "castlist": "Annabelle Wallis – Mia, Ward Horton – John, Tony Amendola – Padre Perez, Alfre Woodard – Evelyn, Brian Howe – Roger",
@@ -491,7 +491,7 @@
             "views": 7088
         },
         {
-            "image": "TheHauntingOfHillHouse.jpg",
+            "image": "the haunting of hill house.jpg",
             "title": "The Haunting of Hill House",
             "description": "Una familia enfrenta los fantasmas de su pasado y los secretos de la casa en la que crecieron, mientras sucesos sobrenaturales aterrorizan a todos.",
             "castlist": "Michiel Huisman – Steven, Carla Gugino – Olivia, Victoria Pedretti – Eleanor, Oliver Jackson-Cohen – Luke, Henry Thomas – Theo",
@@ -501,7 +501,7 @@
             "views": 5399
         },
         {
-            "image": "AmericanHorrorStory.jpg",
+            "image": "American horror story.jpg",
             "title": "American Horror Story",
             "description": "Cada temporada cuenta una historia independiente de terror, abordando casas embrujadas, manicomios, brujería y fenómenos sobrenaturales.",
             "castlist": "Jessica Lange – Varias, Sarah Paulson – Varias, Evan Peters – Varias, Lily Rabe – Varias, Kathy Bates – Varias",
@@ -521,7 +521,7 @@
             "views": 9715
         },
         {
-            "image": "Evil.jpg",
+            "image": "EvilSerie.jpg",
             "title": "Evil",
             "description": "Una psicóloga, un sacerdote y un contratista investigan sucesos aparentemente sobrenaturales y fenómenos demoníacos que desafían la lógica.",
             "castlist": "Katja Herbers – Kristen Bouchard, Mike Colter – David Acosta, Aasif Mandvi – Ben Shakir, Kurt Fuller – Dr. Boggs, Christine Lahti – Sheryl Luria",
